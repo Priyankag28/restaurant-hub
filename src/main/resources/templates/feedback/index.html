@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<p th:unless="${feedbacks} and ${feedbacks.size()}">no Feedback!</p>
+
+<div class="container body-content">
+    <h2>Restaurant Feedbacks</h2>
+<!--    <ul>-->
+<!--        <li th:each="feedback : ${feedbacks}">-->
+<!--            <a th:text="${feedback.nameOfRestaurant}"></a>-->
+<!--            <a th:text="${feedback.review}"></a>-->
+
+<!--        </li>-->
+<!--    </ul>-->
+
+    <table style="width:50%">
+        <tr>
+            <th>Name</th>
+            <th>Review</th>
+        </tr>
+        <tr th:each="feedback : ${feedbacks}">
+            <td><p th:text="${feedback.nameOfRestaurant}"></p></td>
+            <td><p th:text="${feedback.review}"></p></td>
+        </tr>
+    </table>
+
+    <a th:href="@{'/feedback/add'}">Add Feedback</a>
+
+</div>
+
+</body>
+</html>

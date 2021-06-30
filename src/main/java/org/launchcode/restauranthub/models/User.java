@@ -18,7 +18,7 @@ public class User {
     public User(){
     }
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-    public User (String username, String password){
+    public User(String username, String password){
         this.username = username;
         this.pwHash = encoder.encode(password);
     }
@@ -33,7 +33,7 @@ public class User {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+   // public void setId(int id) {
+//        this.id = id;
+//    }
 }

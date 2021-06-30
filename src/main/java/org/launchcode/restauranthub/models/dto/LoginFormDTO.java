@@ -1,11 +1,15 @@
 package org.launchcode.restauranthub.models.dto;
 
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class LoginFormDTO {
 
-    //@NotNull
-    //@NotBlank
-    //@Size(min = 3, max = 20, message = "Invalid username. Must be between 3 and 20 characters")
+    @NotNull
+    @NotBlank
+    @Size(min = 3, max = 20, message = "Invalid username. Must be between 3 and 20 characters")
     private String username;
 
     public String getUsername() {
@@ -16,9 +20,9 @@ public class LoginFormDTO {
         this.username = username;
     }
 
-    //@NotNull
-    //@NotBlank
-    //@size(min = 5, max = 30, message = "Invalid password. Must be between 5 and 30 characters.")
+    @NotNull
+    @NotBlank
+    @Size(min = 5, max = 30, message = "Invalid password. Must be between 5 and 30 characters.")
     private String password;
 
     public String getPassword() {

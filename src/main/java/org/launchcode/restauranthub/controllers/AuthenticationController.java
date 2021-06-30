@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -42,7 +43,7 @@ public class AuthenticationController {
       return "register";
     }
     @PostMapping("/register")
-    public String processRegistrationForm(@ModelAttribute  RegisterFormDTO registerFormDTO,
+    public String processRegistrationForm(@ModelAttribute @Valid RegisterFormDTO registerFormDTO,
                                           Errors errors, HttpServletRequest request,
                                           Model model) {
 
@@ -80,7 +81,7 @@ public class AuthenticationController {
         return "login";
     }
     @PostMapping("/login")
-    public String processLoginForm(@ModelAttribute LoginFormDTO loginFormDTO,
+    public String processLoginForm(@ModelAttribute  @Valid LoginFormDTO loginFormDTO,
                                    Errors errors, HttpServletRequest request,
                                    Model model) {
 
